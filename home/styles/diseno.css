@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.uwu{
+  margin-left: 3rem;
+}
+.uwu a{
+  font-size: 69rem;
+}
+.container,.section{
+
+  margin: 0 auto;
+max-width: auto;
+
+}
+
+#dropdown1 a{
+  text-align: center;
+  color: black;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#dropdown1{
+  height: auto;
+}
+.hide-on-med-and-down{
+  font-size: 30px;
+}
