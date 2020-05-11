@@ -11,44 +11,97 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
+
+
+
+
+  
 </head>
 
 <body>
-
-    <ul id="dropdown1" class="dropdown-content ">
-        <li><a href="#!">Noticias Completas!</a></li>
-        <li><a href="#!">Coronavirus</a></li>
-        <li><a href="#!">ESI</a></li>
-        <li><a href="#!">Dengue</a></li>
-        <li><a href="#!">Cambio Climático</a></li>
-    </ul> 
-  
-    <nav>    
-      <div class="nav-wrapper cyan darken-1">
-        
-      <a href="#!" class="brand-logo uwu">InfoTIC</a>
-      
-      <ul class="right hide-on-med-and-down">
-        
-        <li><a href="sass.html">Home</a></li>
-        <li><a href="badges.html">About</a></li>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Contenido<i class="material-icons right">arrow_drop_down</i></a></li>
-     
-      </ul>
+<nav>    
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <div class="nav-wrapper orange darken-2">
     
+  <a href="#!" class="brand-logo uwu">InfoTIC</a>
+  
+  <ul class="right hide-on-med-and-down">
+    
+    <li><a href="sass.html">Home</a></li>
+    <li tabindex="0"><a class=" modal-trigger" href="#modal1">About</a></li>
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Contenido<i class="material-icons right">arrow_drop_down</i></a><ul id="dropdown1" class="dropdown-content " tabindex="0">
+    <li tabindex="0"><a href="#!">Noticias</a></li>
+    <li tabindex="0"><a href="#!">Sobre Nosotros</a></li>
+    <li tabindex="0"><a class="" href="#">About</a></li>
+</ul></li>
+ 
+  </ul>
+
+  </div>
+  
+</nav>
+
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="Coronavirus.jpg">
       </div>
-  </nav>
+      <a href="#user"><img class="circle" src="discord1.png"></a>
+      <a href="#name"><span class="white-text name">Usuario No Registrado</span></a>
+      <a href="#email"><span class="white-text email">invitado@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>Noticias Completas!</a></li>
+    <li><div class="divider"></div></li>
 
+    <li><a href="#!"><i class="material-icons">cloud</i>Urgente!</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Noticias</a></li>
+    <li><a class="waves-effect" href="#!">Coronavirus </a></li>
+    <li><a class="waves-effect" href="#!">ESI</a></li>
+    <li><a class="waves-effect" href="#!">Cambio Climático</a></li>
+    <li><a class="waves-effect" href="#!">Dengue</a></li>
 
+  </ul>
+          <!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Lorem Ipsum</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis adipisci officiis et quas accusamus id, temporibus explicabo officia, nemo quisquam laboriosam est nostrum, dolor dolores amet assumenda velit ipsa. Voluptates!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit consequatur accusantium doloribus rerum, commodi similique illum, aliquam doloremque delectus, nam necessitatibus ea mollitia error ipsam impedit beatae dolores cumque!</p>
+    </div>
+<div style="text-align: center;" class="descrip">
+  <img style="width: 50%;height: auto;" src="discord1.png" alt="">
+
+</div>   
+<div class="modal-content">
+  <h4>Lorem Ipsum</h4>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis adipisci officiis et quas accusamus id, temporibus explicabo officia, nemo quisquam laboriosam est nostrum, dolor dolores amet assumenda velit ipsa. Voluptates!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit consequatur accusantium doloribus rerum, commodi similique illum, aliquam doloremque delectus, nam necessitatibus ea mollitia error ipsam impedit beatae dolores cumque!</p>
+</div>
+<div style="text-align: center;" class="descrip">
+  <img style="width: 50%;height: auto;" src="discord1.png" alt="">
+
+</div>  
+<div class="modal-content">
+  <h4>Lorem Ipsum</h4>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis adipisci officiis et quas accusamus id, temporibus explicabo officia, nemo quisquam laboriosam est nostrum, dolor dolores amet assumenda velit ipsa. Voluptates!, Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit consequatur accusantium doloribus rerum, commodi similique illum, aliquam doloremque delectus, nam necessitatibus ea mollitia error ipsam impedit beatae dolores cumque!</p>
+</div> 
+<div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">SI</a>
+    </div>
+  </div>
   <div class="container section ">
-    <h3 >Las noticias mas jugosas!</h3>
     <br>
     <h4>Mas recientes</h4>
     <br>
@@ -415,11 +468,28 @@
 
   </div>
 
-
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js">
   </script>
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+ 
+ var instance = M.Carousel.init({
+    fullWidth: true,
+    indicators: true
+  });
 
+  // Or with jQuery
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+</script>
+<script type="text/javascript">
+	$(".button-collapse").sideNav();
+
+</script>
   <script>
   
     document.addEventListener('DOMContentLoaded', function() {
@@ -430,7 +500,16 @@
   <script>
     AOS.init();
   </script>
+<script>
 
+  // Initialize collapse button
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+</script>
 
 </body>
 
