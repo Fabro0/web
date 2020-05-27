@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="{{url_for('static',filename='js/app.js')}}"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <!-- <link rel="stylesheet" type="text/css" href="css/custom.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="d-flex toggled" id="wrapper">
+
+    <!-- Sidebar -->
+   <form action="{{url_for('closeSess')}}" method="post">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Proyecto 4TO </div>
+      <div class="list-group list-group-flush">
+        <a href="/home_log" class="list-group-item list-group-item-action bg-light">Perfil</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Agregar Fotos</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Sacar Fotos</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Entrenar Modelo</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">About</a>
+        <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Cerrar Sesión</a> -->
+        <input  class="list-group-item list-group-item-action bg-light" type="submit" value="cerrar session">
+      </div>
+    </div>
+   </form>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-info" id="menu-toggle"><i style="font-size:30px;width: 40px;" class="fa">&#xf0c9;</i></button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/login">Iniciar Sesión</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/register">Crear cuenta</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/upload">Upload</a>
+             </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 style="font-size: 3em;text-align: center;margin: 5vh auto;">Bienvenido a la plantilla de Agregado de Imágenes</h1>
+        <div class="container">
+          <h1 class="title">
+            {{g.user.fullname}}'s Profile
+          </h1>
+          <h2 class="subtitle">
+            You are user number #{{g.user.id}}
+          </h2>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-8">
+              
+              <form id="upload-form" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+                  <h1>Files:</h1><br>
+                  <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Name</span>
+                      </div>
+                      <input required placeholder="Ingrese nombre" type="text" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                
+                  
+                  </div>
+                  <br>
+                  <div id="msg" style="width: 100%;text-align: center;">
+                   
+                    <h4 >Elige los archivos aquí abajo</h4>
+                    {% for message in get_flashed_messages() %}
+              <h3>{{ message }}</h3>
+          {% endfor %}
+                  </div>
+                  <br>
+                  <div class="input-group">
+                      <div class="custom-file">
+                          <input class="custom-file-input" id="inputGroupFile02"type="file" name="file" accept="image/*" multiple class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" >    
+                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                          <input type="submit" class="btn btn-info center" value="Upload!" id="upload-button">
+                      </div>
+                    </div>
+      
+                  <div class="input-group input-group-lg">
+                                 
+                  </div>
+      
+      
+                  
+                  <div id="msg"></div>
+              </form>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div>
+      
+      <br>
+      <br>
+        
+        <div class="container">
+          <div class="row">
+            <div class="col"><div class="col mb-5">
+              <div class="card">
+                <img src="https://data.whicdn.com/images/307144997/original.jpg?t=1518442689" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div></div>
+            <div class="col"><div class="col mb-5">
+              <div class="card">
+                <img src="https://data.whicdn.com/images/307144997/original.jpg?t=1518442689" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="w-100"></div>
+            <div class="col"><div class="col mb-5">
+              <div class="card">
+                <img src="https://data.whicdn.com/images/307144997/original.jpg?t=1518442689" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </div></div>
+            <div class="col"><div class="col mb-5">
+              <div class="card">
+                <img src="https://data.whicdn.com/images/307144997/original.jpg?t=1518442689" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div></div>
+          </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+  <script src="app.js"></script>
+  <script>
+    $("#inputGroupFile02").change(function(){
+
+var input = document.getElementById('inputGroupFile02');
+
+for (var i=0; i<input.files.length; i++)
+{
+    var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+    if ((ext == 'jpg') || (ext == 'png')|| (ext == 'jpeg'))
+    {
+        $("#msg").text("Las fotos seleccionadas son válidas, subilas!")
+    }
+    else
+    {
+        $("#msg").text("Fijate que hay algunas fotos con formato no permitido, asegurate que sean PGN, JPG o JPEG, reintenta!")
+        document.getElementById("file-picker").value ="";
+    }
+
+}
+
+
+} );
+$("#menu-toggle").click(function(e) {
+e.preventDefault();
+$("#wrapper").toggleClass("toggled");
+});
+  </script>
+</body>
+
+</html>
