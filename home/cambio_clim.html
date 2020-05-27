@@ -18,8 +18,10 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="/materialize/js/materialize.js"></script>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="materialize/css/materialize.min.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
@@ -31,9 +33,33 @@
 </head>
 
 <body>
-<nav>    
+  <style>
+    ::-webkit-scrollbar{
+      display: none;
+    }
+  </style>  
+  
+  <div class="progress" style="position: fixed;
+  height: 1vh;
+  top: 0;
+  margin: 0;
+  display: block;background-color: #333  ;z-index: 99;">
+    <div class="determinate" style="width: 38.4847%;background-color: rgb(165, 165, 165) ;"></div>
+  </div>
+  <script>
+  let indicador_scroll = $(".determinate")
+  window.onscroll = (e) => {
+  let altura =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight
+  let porcentaje = (window.scrollY / altura) * 100
+  indicador_scroll.width(porcentaje + "%")
+  }
+  </script>
+  
+<nav style="background-color: #333;">    
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  <div class="nav-wrapper teal lighten-1  ">
+  <div class="nav-wrapper " style="background-color: #333;">
     
     <a href="index.html" class="brand-logo uwu">InfoTIC</a>
   
@@ -42,12 +68,12 @@
     <li><a href="sass.html">Home</a></li>
     <li tabindex="0"><a class=" modal-trigger" href="#modal1">About</a></li>
     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Contenido<i class="material-icons right">arrow_drop_down</i></a>
-      <ul id="dropdown1" class="dropdown-content " tabindex="0">
-        <li ><a class="" href="index.html">Noticias Completas!</a></li>
-        <li ><a class="" href="coronavirus.html">Coronavirus</a></li>
-        <li ><a class="" href="dengue.html">Dengue</a></li>
-        <li ><a class="" href="esi.html">ESI</a></li>
-        <li ><a class="" href="cambio_clim.html">Cambio Climático</a></li>
+      <ul id="dropdown1" class="dropdown-content "  tabindex="0">
+        <li ><a class=""style="color: #333;" href="index.html">Noticias Completas!</a></li>
+        <li ><a class="" style="color: #333;" href="coronavirus.html">Coronavirus</a></li>
+        <li ><a class="" style="color: #333;" href="dengue.html">Dengue</a></li>
+        <li ><a class="" style="color: #333;" href="esi.html">ESI</a></li>
+        <li ><a class="" style="color: #333;" href="cambio_clim.html">Cambio Climático</a></li>
       </ul>
 </li>
  
@@ -126,19 +152,37 @@
 </style>
 <div class="row ">
 
-  <div class="col xl2 l12 m12 s12 "></div>
+  <div class="col xl3 l12 m12 s12 "></div>
 
-<div class="col xl8 l12 m12 s12 ">
+<div class="col xl6 l12 m12 s12 ">
 
   <br>
   <h3>Crisis del coronavirus vs. crisis climática: lecciones de un confinamiento forzado</h3>
   <br>
-  <h4 class="flow-text epig">La declaración del estado de alarma ante la crisis de la Covid-19 vació las calles. Desaparecieron los coches, se desocuparon oficinas, aeropuertos y tiendas. La vida que conocíamos quedó relegada a una espera casera con el único objetivo de evitar el contagio del coronavirus y salvar vidas.</h4>
+  <p class="flow-text epig">La declaración del estado de alarma ante la crisis de la Covid-19 vació las calles. Desaparecieron los coches, se desocuparon oficinas, aeropuertos y tiendas. La vida que conocíamos quedó relegada a una espera casera con el único objetivo de evitar el contagio del coronavirus y salvar vidas. </p>
   <br>
   <p class="flow-text epig">El cambio más notable fue el uso del auto. El cierre de los colegios y el teletrabajo en muchas empresas nos recluyeron en nuestros hogares. La polución, que cada año mata a miles de personas, se redujo en cuestión de horas, como ya ocurrió antes en China e Italia. Solo en la primera semana de confinamiento, el tráfico por carretera en España descendió un 60 %.</p>
   <br>
   <p class="flow-text epig">Según Greenpeace, los valores medios de dióxido de nitrógeno (NO2), el principal gas contaminante emitido por los vehículos, apenas han alcanzado el 40 % del límite fijado por la Organización Mundial de la Salud (OMS) y la Unión Europea (UE) desde el 10 de marzo, cuando se establecieron las primeras medidas de contención. Y los niveles de concentración no dejan de caer a medida que pasan los días.</p>
   <br>
+  <p class="flow-text txt-principal">
+    La gravedad de los síntomas de la COVID-19, puede ser de leve a grave.
+    Algunas personas no presentan síntomas. Las personas mayores o que
+    tienen ciertas afecciones crónicas, como enfermedades cardíacas o
+    pulmonares, o diabetes, pueden correr un riesgo más alto de enfermarse
+    de gravedad. Esto es similar a lo que se ve con otras enfermedades
+    respiratorias, como la influenza.
+  </p>
+  <img src="./imageness/coronavirus-1580229274318.jpg" alt="Imagen Coronavirus" class="right responsive-img">
+  <p class="flow-text txt-principal">
+    La gravedad de los síntomas de la COVID-19, puede ser de leve a grave.
+    Algunas personas no presentan síntomas. Las personas mayores o que
+    tienen ciertas afecciones crónicas, como enfermedades cardíacas o
+    pulmonares, o diabetes, pueden correr un riesgo más alto de enfermarse
+    de gravedad. Esto es similar a lo que se ve con otras enfermedades
+    respiratorias, como la influenza.
+  </p>
+  
   <div class="row">
 
       
@@ -156,7 +200,7 @@
         </div>
 
         <div class="card-action ">
-          <a class = "teal-text" href="coronavirus.html">Nota completa</a>
+          <a style="color:rgb(119, 119, 119)" href="coronavirus.html">Nota completa</a>
         </div>
 
       </div>
@@ -176,7 +220,7 @@
             <i class="material-icons right">more_vert</i>
           </span>
           <p>
-            <a class = "teal-text"href="coronavirus.html">Mas Info</a>
+            <a style="color:rgb(119, 119, 119)"href="coronavirus.html">Mas Info</a>
           </p>
         </div>
       
@@ -204,7 +248,7 @@
             <i class="material-icons right">more_vert</i>
           </span>
           <p>
-            <a class = "teal-text"href="index.html">Mas Info</a>
+            <a style="color:rgb(119, 119, 119)"href="index.html">Mas Info</a>
           </p>
         </div>
       
@@ -231,7 +275,7 @@
   
 </div>
 
-<div class="col xl2 l12 m12 s12 "></div>
+<div class="col xl3 l12 m12 s12 "></div>
 
   </div>
 
@@ -306,7 +350,7 @@
 </script>
 
 </body>
-<footer class="page-footer teal lighten-3">
+<footer class="page-footer" style="background-color: #333;">
   <div class="container ">
     <div class="row ">
       <div class="col l6 s12 ">
