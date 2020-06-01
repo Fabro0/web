@@ -1,0 +1,15 @@
+.droptarget {
+    float: left; 
+    width: 500px; 
+    height: 100%;
+    margin: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+  }
+
+.subject{
+    border-radius: 5px;
+    margin: 10px auto;
+    background-color: rgb(58, 223, 245);
+}
